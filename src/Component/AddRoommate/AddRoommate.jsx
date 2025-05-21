@@ -6,8 +6,22 @@ const AddRoommate = () => {
         e.preventDefault();
         const form=e.target;
         const formData= new FormData(form);
-        const roommateData=Object.fromEntries(formData.entries());
-        console.log(roommateData);
+        const newRoom=Object.fromEntries(formData.entries());
+        console.log(newRoom);
+
+
+     fetch('http://localhost:3000/roommates' , {
+         method: 'POST',
+         headers: {
+          'content-type': 'application/json'
+             },
+              body: JSON.stringify(newRoom)
+         }
+        )
+       .then(res=>res.json())
+        .then(data=>{
+            console.log('after add db', data)
+        })
       
     }
     return (
@@ -41,7 +55,7 @@ const AddRoommate = () => {
         <textarea className="textarea textarea-bordered w-full"  name='description' required></textarea>
 
         <label className="label">Contact Info</label>
-        <input type="text"  name='contact info' className="input input-bordered w-full" required />
+        <input type="text"  name='contactInfo' className="input input-bordered w-full" required />
 
         <label className="label">Availability</label>
         <select className="select select-bordered w-full" name='availability' required>
@@ -50,11 +64,11 @@ const AddRoommate = () => {
           <option value="Not Available">Not Available</option>
         </select>
 
-        <label name='email' className="label">User Email</label>
-        <input type="email" className="input input-bordered w-full"  />
+        <label  className="label">User Email</label>
+        <input  name='email' type="email" className="input input-bordered w-full"  />
 
-        <label name='name' className="label">User Name</label>
-        <input type="text" className="input input-bordered w-full" />
+        <label  className="label">User Name</label>
+        <input name='name' type="text" className="input input-bordered w-full" />
 
         <button  type="submit" className="btn btn-neutral w-full mt-4">Add</button>
       </form>
