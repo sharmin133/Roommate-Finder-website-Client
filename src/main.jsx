@@ -13,6 +13,8 @@ import Login from './Component/Login/Login.jsx';
 import Register from './Component/Register/Register.jsx';
 import AuthProvider from './Component/Context/AuthProvider.jsx';
 import AddRoommate from './Component/AddRoommate/AddRoommate.jsx';
+import BrowsingList from './Component/BrowsingList/BrowsingList.jsx';
+import DetailsData from './Component/DetailsData/DetailsData.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,10 +22,23 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children:[
 
-      {index:true, element:<Home></Home>},
+      {index:true, 
+      loader: ()=>fetch('http://localhost:3000/roommates'),
+      element:<Home></Home>},
       { path:'login', element:<Login></Login> },
       {path:'register', element:<Register></Register>},
       {path:'addRoommate', element:<AddRoommate></AddRoommate>},
+      {
+        path:'browsingList',
+        loader: ()=>fetch('http://localhost:3000/roommates'),
+         element:<BrowsingList></BrowsingList>
+        },
+        {
+          path:'detailsData/:_id',
+          loader:({params})=>fetch(`http://localhost:3000/roommates/${params._id}`),
+          element:<DetailsData></DetailsData>
+
+        }
     ]
   },
 

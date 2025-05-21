@@ -19,10 +19,12 @@ const Header = () => {
     const links=<>
        <li><NavLink to='/' >Home</NavLink></li>
        <li><NavLink to='/addRoommate' >Add Roommate</NavLink></li>
-       <li><NavLink>Browse Listing</NavLink></li>
+       <li><NavLink to='/browsingList' >Browse Listing</NavLink></li>
        <li><NavLink>My Listings</NavLink></li>
        <li><NavLink to='/login'>Login</NavLink></li>
        <li><NavLink to='/register'>Register</NavLink></li>
+        <li><NavLink to='/detailsData'>DetailsData</NavLink></li>
+
 
      
     

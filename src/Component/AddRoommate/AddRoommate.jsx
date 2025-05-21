@@ -1,4 +1,6 @@
 import React from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+
 
 const AddRoommate = () => {
 
@@ -10,7 +12,7 @@ const AddRoommate = () => {
         console.log(newRoom);
 
 
-     fetch('http://localhost:3000/roommates' , {
+     fetch('http://localhost:3000/roommates', {
          method: 'POST',
          headers: {
           'content-type': 'application/json'
@@ -20,13 +22,15 @@ const AddRoommate = () => {
         )
        .then(res=>res.json())
         .then(data=>{
-            console.log('after add db', data)
+            if(data.insertedId) {
+              toast.success('User added successfully')
+            }
         })
       
     }
     return (
         <div className='max-w-xl mx-auto p-4 '>
-            
+            <ToastContainer position='top-center' autoClose={3000}></ToastContainer>
 <div className="text-xl font-semibold mb-4">Add Roommate Listing</div>
      <form onSubmit={handleFormData} className="fieldset ">
 
@@ -50,6 +54,13 @@ const AddRoommate = () => {
 
         <label className="label">Lifestyle Preferences</label>
         <textarea className="textarea textarea-bordered w-full" name='preference' placeholder="Pets, Smoking, Night Owl, etc."></textarea>
+         <select className="select select-bordered w-full" name='roomType' required>
+          <option value="">Select</option>
+          <option value="Pets">Single</option>
+          <option value="Smoking">Shared</option>
+          <option value="Night Owl">Studio</option>
+        </select>
+
 
         <label className="label">Description</label>
         <textarea className="textarea textarea-bordered w-full"  name='description' required></textarea>
