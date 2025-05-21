@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { use } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
+import { AuthContext } from '../Context/AuthContext';
 
 
 const AddRoommate = () => {
+  const {user}=use(AuthContext)
 
     const handleFormData=e=>{
         e.preventDefault();
@@ -53,12 +55,12 @@ const AddRoommate = () => {
         </select>
 
         <label className="label">Lifestyle Preferences</label>
-        <textarea className="textarea textarea-bordered w-full" name='preference' placeholder="Pets, Smoking, Night Owl, etc."></textarea>
+        {/* <textarea className="textarea textarea-bordered w-full" name='preference' placeholder="Pets, Smoking, Night Owl, etc."></textarea> */}
          <select className="select select-bordered w-full" name='roomType' required>
           <option value="">Select</option>
-          <option value="Pets">Single</option>
-          <option value="Smoking">Shared</option>
-          <option value="Night Owl">Studio</option>
+          <option value="Pets">Pets</option>
+          <option value="Smoking">Smoking</option>
+          <option value="Night Owl">Night</option>
         </select>
 
 
@@ -76,10 +78,10 @@ const AddRoommate = () => {
         </select>
 
         <label  className="label">User Email</label>
-        <input  name='email' type="email" className="input input-bordered w-full"  />
+        <input  name='email' type="email" className="input input-bordered w-full" defaultValue={user.email} readOnly  />
 
         <label  className="label">User Name</label>
-        <input name='name' type="text" className="input input-bordered w-full" />
+        <input name='name' type="text" className="input input-bordered w-full" defaultValue={user.displayName} readOnly />
 
         <button  type="submit" className="btn btn-neutral w-full mt-4">Add</button>
       </form>

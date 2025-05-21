@@ -14,6 +14,7 @@ const BrowsingList = () => {
             <th>Location</th>
             <th>Rent Amount</th>
             <th>Room Type</th>
+           
           </tr>
         </thead>
         <tbody>
@@ -30,6 +31,8 @@ const BrowsingList = () => {
                 
                 </Link>
               </td>
+
+               
             </tr>
           ))}
         </tbody>

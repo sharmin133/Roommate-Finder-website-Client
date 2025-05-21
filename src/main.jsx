@@ -15,6 +15,7 @@ import AuthProvider from './Component/Context/AuthProvider.jsx';
 import AddRoommate from './Component/AddRoommate/AddRoommate.jsx';
 import BrowsingList from './Component/BrowsingList/BrowsingList.jsx';
 import DetailsData from './Component/DetailsData/DetailsData.jsx';
+import UserListing from './Component/UserListing/UserListing.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,12 @@ const router = createBrowserRouter([
           loader:({params})=>fetch(`http://localhost:3000/roommates/${params._id}`),
           element:<DetailsData></DetailsData>
 
-        }
+        },
+
+        {
+  path: 'myListing',
+  element: <UserListing></UserListing>
+}
     ]
   },
 
