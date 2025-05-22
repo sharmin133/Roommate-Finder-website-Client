@@ -1,37 +1,23 @@
 import React, { use } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
 
+const UpdateData = () => {
 
-const AddRoommate = () => {
-  const {user}=use(AuthContext)
+    const {user}=use(AuthContext)
+    
+        const handleFormData=e=>{
+            e.preventDefault();
+            const form=e.target;
+            const formData= new FormData(form);
+            const updateRoom=Object.fromEntries(formData.entries());
+            console.log(updateRoom);
+    
+    
+        }
 
-    const handleFormData=e=>{
-        e.preventDefault();
-        const form=e.target;
-        const formData= new FormData(form);
-        const newRoom=Object.fromEntries(formData.entries());
-        console.log(newRoom);
-
-
-     fetch('http://localhost:3000/roommates', {
-         method: 'POST',
-         headers: {
-          'content-type': 'application/json'
-             },
-              body: JSON.stringify(newRoom)
-         }
-        )
-       .then(res=>res.json())
-        .then(data=>{
-            if(data.insertedId) {
-              toast.success('User added successfully')
-            }
-        })
-      
-    }
     return (
-        <div className='max-w-xl mx-auto p-4 '>
+        <div>
+             <div className='max-w-xl mx-auto p-4 '>
             <ToastContainer position='top-center' autoClose={3000}></ToastContainer>
 <div className="text-xl font-semibold mb-4">Add Roommate Listing</div>
      <form onSubmit={handleFormData} className="fieldset ">
@@ -82,11 +68,12 @@ const AddRoommate = () => {
         <label  className="label">User Name</label>
         <input name='name' type="text" className="input input-bordered w-full" defaultValue={user.displayName} readOnly />
 
-        <button  type="submit" className="btn btn-neutral w-full mt-4">Add</button>
+        <button  type="submit" className="btn btn-neutral w-full mt-4">Update</button>
       </form>
 
+        </div>
         </div>
     );
 };
 
-export default AddRoommate;
+export default UpdateData;

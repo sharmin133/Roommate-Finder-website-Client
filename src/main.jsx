@@ -16,6 +16,7 @@ import AddRoommate from './Component/AddRoommate/AddRoommate.jsx';
 import BrowsingList from './Component/BrowsingList/BrowsingList.jsx';
 import DetailsData from './Component/DetailsData/DetailsData.jsx';
 import UserListing from './Component/UserListing/UserListing.jsx';
+import UpdateData from './Component/UpdateData/UpdateData.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,16 +36,20 @@ const router = createBrowserRouter([
          element:<BrowsingList></BrowsingList>
         },
         {
-          path:'detailsData/:_id',
+          path:'detailsData/:id',
           loader:({params})=>fetch(`http://localhost:3000/roommates/${params._id}`),
           element:<DetailsData></DetailsData>
 
         },
 
         {
-  path: 'myListing',
-  element: <UserListing></UserListing>
-}
+          path: 'myListing',
+          element: <UserListing></UserListing>
+         },
+         {
+          path:'updateListing/:id',
+          element:<UpdateData> </UpdateData>
+         }
     ]
   },
 
