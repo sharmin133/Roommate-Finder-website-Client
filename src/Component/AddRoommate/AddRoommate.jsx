@@ -55,7 +55,7 @@ const AddRoommate = () => {
         </select>
 
         <label className="label">Lifestyle Preferences</label>
-         <select className="select select-bordered w-full" name='roomType' required>
+         <select className="select select-bordered w-full" name='preference' required>
           <option value="">Select</option>
           <option value="Pets">Pets</option>
           <option value="Smoking">Smoking</option>

@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         },
         {
           path:'detailsData/:id',
-          loader:({params})=>fetch(`http://localhost:3000/roommates/${params._id}`),
+          loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
           element:<DetailsData></DetailsData>
 
         },
@@ -48,6 +48,7 @@ const router = createBrowserRouter([
          },
          {
           path:'updateListing/:id',
+          loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
           element:<UpdateData> </UpdateData>
          }
     ]
