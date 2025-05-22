@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 
 const Footer = () => {
     return (
-        <div className='bg-gradient-to-r from-white to-amber-100 '>
+        <div className='bg-base-100 text-base-content py-8 shadow-inner'>
              
              <div className='flex items-center text-center justify-center border-t-2 '> <img className='w-15 h-15 rounded-3xl' src="/AllPictures/logo.png" alt="" />
             <a className="btn btn-ghost text-4xl text-green-600 font-bold">FlatFusion</a>

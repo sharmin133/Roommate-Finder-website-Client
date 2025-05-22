@@ -49,13 +49,10 @@ fetch(`http://localhost:3000/roommates/${_id}`,{
       icon: "success"
     });
 
+    const remainingData=rooms.filter(room=>room._id!==_id);
+             setRooms(remainingData)
  }
 })
-
-
-
-
-
     
   }
 });

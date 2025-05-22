@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const RoomCard = ({room}) => {
 
@@ -10,7 +11,10 @@ const RoomCard = ({room}) => {
     <p>{location}</p>
     <p>{description}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">See More</button>
+      <Link to={`/detailsData/${room._id}`} >
+                  <button className='btn btn-primary'>See More</button>
+                
+                </Link>
     </div>
   </div>
 </div>
