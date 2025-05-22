@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
+import "./header.css"
 
 
 
@@ -37,16 +38,16 @@ const Header = () => {
     })
   }
     const links=<>
-       <li><NavLink to='/' >Home</NavLink></li>
-       <li><NavLink to='/addRoommate' >Add Roommate</NavLink></li>
-       <li><NavLink to='/browsingList' >Browse Listing</NavLink></li>
+       <li><NavLink to='/'  className='text-xl  font-semibold' >Home</NavLink></li>
+       <li><NavLink to='/addRoommate'  className='text-xl  font-semibold' >Add Roommate</NavLink></li>
+       <li><NavLink to='/browsingList'  className='text-xl  font-semibold' >Browse Listing</NavLink></li>
        
-       <li><NavLink to='/login'>Login</NavLink></li>
-       <li><NavLink to='/register'>Register</NavLink></li>
-        <li><NavLink to='/detailsData'>DetailsData</NavLink></li>
+       <li><NavLink to='/login'  className='text-xl  font-semibold'>Login</NavLink></li>
+       <li><NavLink to='/register' className='text-xl  font-semibold'>Register</NavLink></li>
+        <li><NavLink to='/detailsData' className='text-xl font-semibold'>DetailsData</NavLink></li>
         <li>
         
-          <NavLink to='/myListing'>My Listings</NavLink>
+          <NavLink to='/myListing' className='text-xl  font-semibold'>My Listings</NavLink>
       </li>
 
 
@@ -120,7 +121,6 @@ const Header = () => {
         </div>
       </div>
 
-{/* <img className=' h-3/5' src="/AllPictures/header-banner.jpg" alt="" /> */}
 
 </div>
     )

@@ -7,7 +7,7 @@ const AutoPlay = () => {
      const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         speed: 2000,
@@ -21,16 +21,18 @@ const AutoPlay = () => {
 
   const images = [
    "/AllPictures/header-banner.jpg",
-    "/AllPictures/header-banner.jpg",
-     "/AllPictures/header-banner.jpg"
+    "/AllPictures/3d-rendering-loft-luxury-living-room-with-bookshelf.jpg",
+    "/AllPictures/banner3.webp",
+    "/AllPictures/banner2.jpg",
+     
     
   ];
     return (
        <div className="slider-container shadow">
       <Slider {...settings}>
         {images.map((src, index) => (
-          <div key={index} >
-            <img className="p-4 rounded-4xl " src={src} alt=''/>
+          <div key={index}className="flex justify-center" >
+            <img className="p-4 rounded-4xl w-full object-cover h-[90vh]" src={src} alt=''/>
           </div>
         ))}
       </Slider>

@@ -17,6 +17,7 @@ import BrowsingList from './Component/BrowsingList/BrowsingList.jsx';
 import DetailsData from './Component/DetailsData/DetailsData.jsx';
 import UserListing from './Component/UserListing/UserListing.jsx';
 import UpdateData from './Component/UpdateData/UpdateData.jsx';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       element:<Home></Home>},
       { path:'login', element:<Login></Login> },
       {path:'register', element:<Register></Register>},
-      {path:'addRoommate', element:<AddRoommate></AddRoommate>},
+      {path:'addRoommate', element:<PrivateRoute><AddRoommate></AddRoommate></PrivateRoute>},
       {
         path:'browsingList',
         loader: ()=>fetch('http://localhost:3000/roommates'),

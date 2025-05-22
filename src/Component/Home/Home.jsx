@@ -9,7 +9,7 @@ const Home = () => {
     console.log(rooms);
     return (
         <div>
-            {/* <AutoPlay></AutoPlay> */}
+            <AutoPlay></AutoPlay>
 
             <div className='grid grid-cols-1 md:grid-cols-2'>
 
