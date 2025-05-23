@@ -4,39 +4,47 @@ import "slick-carousel/slick/slick-theme.css";
 
 const AutoPlay = () => {
 
-     const settings = {
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 3000,
-        cssEase: "linear",
-        centerMode:true,
-        centerPadding:'20px'
-        
-        
-      };
-
-  const images = [
-   "/AllPictures/header-banner.jpg",
-    "/AllPictures/3d-rendering-loft-luxury-living-room-with-bookshelf.jpg",
-    "/AllPictures/banner3.webp",
-    "/AllPictures/banner2.jpg",
-     
-    
-  ];
+  
     return (
-       <div className="slider-container shadow">
-      <Slider {...settings}>
-        {images.map((src, index) => (
-          <div key={index}className="flex justify-center" >
-            <img className="p-4 rounded-4xl w-full object-cover h-[90vh]" src={src} alt=''/>
-          </div>
-        ))}
-      </Slider>
+      <div className="carousel w-full md:h-[700px] h-[300px]">
+  <div id="slide1" className="carousel-item relative w-full">
+    <img
+       src="/AllPictures/header-banner.jpg"
+      className="w-full" />
+    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <a href="#slide4" className="btn btn-circle">❮</a>
+      <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
+  </div>
+  <div id="slide2" className="carousel-item relative w-full">
+    <img
+    src="/AllPictures/wooden-house-at-waters-edge.jpg"
+    
+      className="w-full" />
+    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <a href="#slide1" className="btn btn-circle">❮</a>
+      <a href="#slide3" className="btn btn-circle">❯</a>
+    </div>
+  </div>
+  <div id="slide3" className="carousel-item relative w-full">
+    <img
+      src="/AllPictures/3d-rendering-loft-luxury-living-room-with-bookshelf.jpg"
+      className="w-full" />
+    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <a href="#slide2" className="btn btn-circle">❮</a>
+      <a href="#slide4" className="btn btn-circle">❯</a>
+    </div>
+  </div>
+  <div id="slide4" className="carousel-item relative w-full">
+    <img
+      src="/AllPictures/a-blue-home-with-snow-covering-the-roof.jpg"
+      className="w-full" />
+    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <a href="#slide3" className="btn btn-circle">❮</a>
+      <a href="#slide1" className="btn btn-circle">❯</a>
+    </div>
+  </div>
+</div>
     );
 };
 
