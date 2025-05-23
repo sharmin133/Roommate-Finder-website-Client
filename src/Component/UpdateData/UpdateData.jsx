@@ -40,6 +40,9 @@ const UpdateData = () => {
         <label className="label">Title</label>
         <input type="text" name="title" className="input input-bordered w-full" placeholder="Looking for a roommate in NYC"  defaultValue={title}required />
 
+         <label className="label">Photo URL</label>
+          <input type="text" className="input" name="photo" placeholder="Your photo URL" />
+        
         <label className="label">Location</label>
         <input type="text" name='location' className="input input-bordered w-full" defaultValue={location} required />
 

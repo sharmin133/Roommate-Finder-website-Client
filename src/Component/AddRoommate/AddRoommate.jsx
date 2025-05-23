@@ -3,9 +3,12 @@ import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
 
 
+
 const AddRoommate = () => {
   const {user}=use(AuthContext)
 
+
+ 
     const handleFormData=e=>{
         e.preventDefault();
         const form=e.target;
@@ -13,7 +16,7 @@ const AddRoommate = () => {
         const newRoom=Object.fromEntries(formData.entries());
         console.log(newRoom);
 
-              newRoom.likes = 0;
+        newRoom.likes = 0;
      fetch('http://localhost:3000/roommates', {
          method: 'POST',
          headers: {
@@ -49,7 +52,7 @@ const AddRoommate = () => {
 
         <label className="label">Photo URL</label>
           <input type="text" className="input input-bordered w-full" name="photo" placeholder="Your photo URL" required  />
-
+        
 
         <label className="label">Location</label>
         <input type="text" name='location' className="input input-bordered w-full" placeholder='Location' required />
@@ -72,6 +75,7 @@ const AddRoommate = () => {
           <option value="Pets">Pets</option>
           <option value="Smoking">Smoking</option>
           <option value="Night Owl">Night</option>
+          <option value="None">None</option>
         </select>
 
 

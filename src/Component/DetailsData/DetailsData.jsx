@@ -30,23 +30,50 @@ const DetailsData = () => {
   };
 
   return (
+  
+
     <div>
-        <ToastContainer position="top-center" ></ToastContainer>
-      <div>
-        <h1>{like} people interested in</h1>
+       <ToastContainer position="top-center" ></ToastContainer>
+<div>
+      <h1 className='text-4xl text-green-800 text-center font-medium md:pb-20 md:pt-10 py-8 '>{like} people interested in Place</h1>
       </div>
-
-      <h2>{room.title}</h2>
-      <p>{room.location}</p>
-
-      <button onClick={handleLike} className='btn btn-primary'>Like</button>
-
-      {like > 0 && (
+ <div className="card bg-base-100 w-2/3 shadow-xl items-center  ">
+  <div className="card-body">
+  
+   <div className='flex gap-3'>
+     <div>
+      <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/>
+    </div>
+            <div>
+              <h2 className='text-2xl font-bold text-blue-800'>{room.title}</h2>
+                <p className='text-cyan-800 text-xl'>{room.location}</p>
+              <p className=' text-xl text-amber-800'>${room.rentAmount}</p>
+              <p className=' text-xl text-amber-800'>{room.roomType}</p>
+              <p className=' text-xl text-amber-800'>{room.preference}</p>
+               <p className=' text-xl text-amber-800'>{room.availability}</p>
+              <p className=' text-xl text-amber-800 text-center'>{room.description}</p>
+            </div>
+   </div>
+    <div className="card-actions justify-end">
+     <button onClick={handleLike} className='btn btn-primary'>Like</button>
+       {like > 0 && (
         <div>
           <strong>Contact: {room.contactInfo}</strong>
         </div>
       )}
     </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
   );
 };
 
