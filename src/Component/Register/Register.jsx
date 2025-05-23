@@ -87,7 +87,7 @@ const Register = () => {
     <div className='bg-gradient-to-r from-sky-50 to-violet-200 py-10'>
 
   <ToastContainer position="top-center" autoClose={3000} />
-    <div className="card bg-base-100 mx-auto mt-20 w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="card mx-auto mt-10 w-full max-w-sm shrink-0 shadow-3xl bg-linear-to-r from-amber-200 to-amber-500">
       <div className="card-body">
         <h1 className="text-5xl font-bold text-violet-700">Register Now</h1>
         <form onSubmit={handleRegister} className="fieldset">

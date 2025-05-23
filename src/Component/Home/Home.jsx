@@ -6,7 +6,7 @@ import RoomCard from '../RoomCard/RoomCard';
 const Home = () => {
 
     const rooms=useLoaderData();
-    console.log(rooms);
+    // console.log(rooms);
     return (
         <div>
             <AutoPlay></AutoPlay>

@@ -13,7 +13,7 @@ const AddRoommate = () => {
         const newRoom=Object.fromEntries(formData.entries());
         console.log(newRoom);
 
-
+              newRoom.likes = 0;
      fetch('http://localhost:3000/roommates', {
          method: 'POST',
          headers: {
@@ -26,27 +26,39 @@ const AddRoommate = () => {
         .then(data=>{
             if(data.insertedId) {
               toast.success('User added successfully')
+              form.reset();
             }
         })
       
     }
     return (
-        <div className='max-w-xl mx-auto p-4 '>
-            <ToastContainer position='top-center' autoClose={3000}></ToastContainer>
-<div className="text-xl font-semibold mb-4">Add Roommate Listing</div>
-     <form onSubmit={handleFormData} className="fieldset ">
 
+
+<div className='bg-gradient-to-r from-sky-50 to-violet-200 py-10'>
+      
+
+        <ToastContainer position="top-center" autoClose={3000} />
+          <div className="card mx-auto mt-10 mb-20 w-full  max-w-xl  shrink-0 shadow-3xl bg-linear-to-r from-cyan-100 to-blue-300">
+            <div className="card-body">
+            <h1 className="text-5xl font-bold text-violet-700">Add Roommate</h1>
+              <form onSubmit={handleFormData} className="fieldset shadow-2xl ">
+<div className='p-8 '>
+  
         <label className="label">Title</label>
         <input type="text" name="title" className="input input-bordered w-full" placeholder="Looking for a roommate in NYC" required />
 
+        <label className="label">Photo URL</label>
+          <input type="text" className="input input-bordered w-full" name="photo" placeholder="Your photo URL" required  />
+
+
         <label className="label">Location</label>
-        <input type="text" name='location' className="input input-bordered w-full" required />
+        <input type="text" name='location' className="input input-bordered w-full" placeholder='Location' required />
 
         <label className="label">Rent Amount ($)</label>
-        <input type="number"  name='rentAmount' className="input input-bordered w-full" min="0" required />
+        <input type="number"  name='rentAmount' className="input input-bordered w-full" min="0" placeholder='Rent Amount' required />
 
         <label className="label">Room Type</label>
-        <select className="select select-bordered w-full" name='roomType' required>
+        <select className="select select-bordered w-full" name='roomType' placeholder='Room Type' required>
           <option value="">Select</option>
           <option value="Single">Single</option>
           <option value="Shared">Shared</option>
@@ -55,7 +67,7 @@ const AddRoommate = () => {
         </select>
 
         <label className="label">Lifestyle Preferences</label>
-         <select className="select select-bordered w-full" name='preference' required>
+         <select className="select select-bordered w-full" name='preference' placeholder='Lifestyle Preferences' required>
           <option value="">Select</option>
           <option value="Pets">Pets</option>
           <option value="Smoking">Smoking</option>
@@ -64,13 +76,13 @@ const AddRoommate = () => {
 
 
         <label className="label">Description</label>
-        <textarea className="textarea textarea-bordered w-full"  name='description' required></textarea>
+        <textarea className="textarea textarea-bordered w-full" placeholder='Description' name='description' required></textarea>
 
         <label className="label">Contact Info</label>
-        <input type="text"  name='contactInfo' className="input input-bordered w-full" required />
+        <input type="text"  name='contactInfo' placeholder='Contact Info'  className="input input-bordered w-full" required />
 
         <label className="label">Availability</label>
-        <select className="select select-bordered w-full" name='availability' required>
+        <select className="select select-bordered w-full" placeholder='Availability' name='availability' required>
           <option value="">Select</option>
           <option value="Available">Available</option>
           <option value="Not Available">Not Available</option>
@@ -83,9 +95,16 @@ const AddRoommate = () => {
         <input name='name' type="text" className="input input-bordered w-full" defaultValue={user.displayName} readOnly />
 
         <button  type="submit" className="btn btn-neutral w-full mt-4">Add</button>
+</div>
       </form>
+                
+                    
+              
+            </div>
+          </div>
+      </div>
 
-        </div>
+
     );
 };
 

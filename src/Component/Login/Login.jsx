@@ -99,15 +99,15 @@ if(passwordRegExp.test(password)===false){
       
 
         <ToastContainer position="top-center" autoClose={3000} />
-          <div className="card bg-base-100 mx-auto mt-20 mb-20 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card mx-auto mt-10 mb-20 w-full max-w-sm shrink-0 shadow-3xl bg-linear-to-r from-amber-200 to-amber-500">
             <div className="card-body">
             <h1 className="text-5xl font-bold text-violet-700">Login now!</h1>
               <form onSubmit={handleLogIn} className="fieldset">
-                <label className="label">Email</label>
+                <label className="label ">Email</label>
                 <input type="email" className="input" name='email' ref={emailRef} placeholder="Email" />
                 <label className="label">Password</label>
                  <div className='relative'>
-                                        <input type={showPassword?'text':'password'} className="input" name='password' placeholder="Password" autoComplete="current-password" />
+                                        <input  type={showPassword?'text':'password'} className="input" name='password' placeholder="Password" autoComplete="current-password" />
                                         <button onClick={()=>{setSowPassword(!showPassword)}} className='btn btn-xs absolute top-2 right-6'>
                                           {
                                           showPassword?<FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>

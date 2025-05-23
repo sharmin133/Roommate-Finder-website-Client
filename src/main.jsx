@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     children:[
 
       {index:true, 
-      loader: ()=>fetch('http://localhost:3000/roommates'),
+      loader: ()=>fetch('http://localhost:3000/roommates/available'),
       element:<Home></Home>},
       { path:'login', element:<Login></Login> },
       {path:'register', element:<Register></Register>},

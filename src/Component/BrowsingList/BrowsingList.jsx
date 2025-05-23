@@ -10,25 +10,24 @@ const BrowsingList = () => {
       <table className="table">
         <thead>
           <tr>
+            <th></th>
             <th>Title</th>
             <th>Location</th>
             <th>Rent Amount</th>
-            <th>Room Type</th>
+            <th></th>
            
           </tr>
         </thead>
         <tbody>
           {rooms.map((room, index) => (
             <tr key={index} className="bg-base-200">
+              <td> {room.photo}</td>
               <td>{room.title}</td>
               <td>{room.location}</td>
               <td>{room.rentAmount}</td>
-              <td>{room.roomType}</td>
               <td>
-
                 <Link to={`/detailsData/${room._id}`} >
                   <button className='btn btn-primary'>See More</button>
-                
                 </Link>
               </td>
 
