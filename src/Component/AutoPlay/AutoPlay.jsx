@@ -18,18 +18,18 @@ const AutoPlay = () => {
 <div className="absolute inset-0 bg-black opacity-20"></div>
 
 
-  <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-center p-4 text-white">
+  <div className="absolute top-3 md:top-10 left-1/2 transform -translate-x-1/2 text-center p-4 text-white">
 
   
-    <div className="text-6xl flex gap-2 justify-center p-4">
-      <p className="text-blue-700 font-bold">Welcome to </p>
-      <p className="text-6xl p-2">
+    <div className="md:text-6xl text-xl flex justify-center items-center gap-2 md:p-4">
+      <p className="text-blue-700 font-bold flex gap-3"><span>Welcome</span> <span className="hidden md:block">to</span> </p>
+      <p className="md:text-6xl text-xl p-2">
         <span className='font-bold text-pink-600'>Flat</span>
         <span className='font-medium text-yellow-500'>Fusion</span>
       </p>
     </div>
 
-    <p className="text-2xl md:text-3xl text-gray-200 italic">
+    <p className=" md:text-3xl text-gray-200 italic">
       Smart. Simple. <span className="text-teal-200 font-semibold">Stress-free</span> roommate{' '}
   <span className="inline-block text-yellow-200 font-semibold">
     <Typewriter
@@ -46,14 +46,14 @@ const AutoPlay = () => {
     </p>
 
    
-    <h2 className="text-3xl md:text-4xl font-bold mb-4 pt-12 text-violet-700">
+    <h2 className="text-xl md:text-4xl font-bold md:mb-4 md:pt-12 text-violet-700">
       Find Your Perfect Roommate
     </h2>
     <div className="mt-4 flex justify-center">
       <input
         type="text"
         placeholder="Search by location, preferences, or budget..."
-        className="w-2/3 px-4 py-2 rounded-lg border-2 border-teal-600 shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+        className="w-2/3 md:px-4 md:py-2 rounded-lg border-2 border-teal-600 shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
       />
     </div>
   </div>
@@ -75,8 +75,8 @@ const AutoPlay = () => {
 
 <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-center p-4 text-white">
 <div className="flex flex-col justify-between items-center">
-  <h2 className="text-6xl text-yellow-400 font-bold p-4 ">Built for Boundaries and Balance</h2>
-<p className="text-2xl pt-4  font-medium">With the right person, shared spaces become shared memories. Let us help you find them.</p>
+  <h2 className=" text-2xl md:text-6xl text-yellow-400 font-bold md:p-4 ">Built for Boundaries and Balance</h2>
+<p className="md:text-2xl md:pt-4  font-medium">With the right person, shared spaces become shared memories. Let us help you find them.</p>
 </div>
 
 </div>
@@ -97,8 +97,8 @@ const AutoPlay = () => {
 
 
 <div className="flex flex-col justify-between items-center">
-  <h2 className="text-6xl text-red-400 font-bold p-4 ">More Than Just Rent Sharing</h2>
-<p className="text-2xl pt-4  font-medium">A modern solution for modern living—where compatibility meets convenience. Find your match, find your home.</p>
+  <h2 className=" text-2xl md:text-6xl text-red-400 font-bold md:p-4 ">More Than Just Rent Sharing</h2>
+<p className="md:text-2xl md:pt-4  font-medium">A modern solution for modern living—where compatibility meets convenience. Find your match, find your home.</p>
 </div>
 
 </div>
@@ -120,8 +120,8 @@ const AutoPlay = () => {
 
 
 <div className="flex flex-col justify-between items-center">
-  <h2 className="text-6xl text-indigo-600 font-bold p-4 ">We Match. You Move In.</h2>
-<p className="text-2xl pt-4  font-medium">Discover a smarter way to share your space. FlatFusion connects like-minded individuals to create harmonious living experiences without the stress.</p>
+  <h2 className=" text-2xl md:text-6xl text-indigo-600 font-bold md:p-4 ">We Match. You Move In.</h2>
+<p className="md:text-2xl md:pt-4  font-medium">Discover a smarter way to share your space. FlatFusion connects like-minded individuals to create harmonious living experiences without the stress.</p>
 </div>
 
 

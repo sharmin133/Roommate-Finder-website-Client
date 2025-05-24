@@ -22,7 +22,7 @@ const Home = () => {
 
              <Fade cascade damping={0.2}>
           <div className='mt-10 '>
-            <h2 className='md:text-5xl text-2xl text-center font-bold text-blue-800 p-4'>Meet Your Ideal Roommate Match </h2>
+            <h2 className='md:text-5xl text-xl text-center font-bold text-blue-800 p-4'>Meet Your Ideal Roommate Match </h2>
             <p className='text-xl text-center text-yellow-500 p-4'>Meet top roommate matches selected for trustworthiness, verified information, and a commitment to peaceful co-living</p>
               <div className='grid grid-cols-1 md:grid-cols-2 md:ml-20'>
 
@@ -38,7 +38,7 @@ const Home = () => {
 
 <Zoom triggerOnce>
            <div className=' mx-10 mt-10 shadow-sm'>
-            <h2 className='text-5xl text-center font-bold text-blue-800 p-4'>Know Before You Nest </h2>
+            <h2 className=' text-3xl  md:text-5xl text-center font-bold text-blue-800 p-4'>Know Before You Nest </h2>
             <p className=' text-2xl text-center text-yellow-500'>Common questions and helpful answers for new users.</p>
 
             <div className="collapse collapse-arrow bg-base-100 border border-base-300">
@@ -69,7 +69,7 @@ const Home = () => {
 
 <Fade direction="up" cascade>
             <div className='mt-10 ml-5 shadow-sm'>
- <h2 className='text-5xl text-center font-bold text-blue-800 p-4  '>Success Story </h2>
+ <h2 className='text-3xl md:text-5xl text-center font-bold text-blue-800 p-4  '>Success Story </h2>
 
 <div className='grid grid-cols-1 md:grid-cols-3 mt-10 md:ml-15 gap-3'>
 

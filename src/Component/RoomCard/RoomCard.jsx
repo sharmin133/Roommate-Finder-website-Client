@@ -15,12 +15,12 @@ const RoomCard = ({room}) => {
     return (
        <div className="card bg-base-100 w-3/4  shadow-2xl m-4 ">
   <div className="card-body bg-linear-to-r from-cyan to-blue-100 rounded-2xl">
-  <div className=' flex gap-3'>
+  <div className=' md:flex gap-3'>
      <div>
       <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/>
     </div>
             <div>
-              <h2 className='text-2xl font-bold text-blue-800'>{title}</h2>
+              <h2 className= 'text-xl md:text-2xl font-bold text-blue-800'>{title}</h2>
                 <div className='flex  justify-around items-center gap-1'><span><IoLocationSharp  size={16} fill='purple'  /></span><p className='text-cyan-900 text-xl'>{location}</p></div>
               <div className='flex  justify-around items-center gap-1'><span><FaMoneyBill size={18} fill='green' /></span><p className=' text-xl '>Rent: ${rentAmount}</p></div>
              <div  className='flex  justify-around items-center gap-1'><span><FaHome   size={18} fill='purple'/></span> <p className=' text-xl text-amber-900 '>{roomType}</p></div>
