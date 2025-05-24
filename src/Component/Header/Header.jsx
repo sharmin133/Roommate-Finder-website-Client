@@ -7,6 +7,8 @@ import "./header.css"
 
 const Header = () => {
 
+  
+
   const{user,signOutUser}=use(AuthContext)
 
   const[theme,setTheme]=useState(
@@ -42,13 +44,18 @@ const Header = () => {
        <li><NavLink to='/addRoommate'  className='text-xl  font-semibold' >Add Roommate</NavLink></li>
        <li><NavLink to='/browsingList'  className='text-xl  font-semibold' >Browse Listing</NavLink></li>
        
-        <li><NavLink to='/detailsData' className='text-xl font-semibold'>DetailsData</NavLink></li>
-        <li>
+      
+        {
+          user&&
+          <>  
+          <li>
         
           <NavLink to='/myListing' className='text-xl  font-semibold'>My Listings</NavLink>
 
-          <NavLink to='/lottie'>Lottie</NavLink>
+        
       </li>
+      </>
+        }
 
 
      
@@ -64,7 +71,7 @@ const Header = () => {
        <div className="navbar bg-base-100 shadow-sm ">
   <div className="navbar-start">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden " >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
       </div>
       <ul
@@ -77,7 +84,7 @@ const Header = () => {
     </div>
    <div className="flex items-center ">
           <img className="md:w-24 md:h-24 w-12 h-12" src="/AllPictures/logo.png" alt="AppNest Logo" />
-         <p className=" text-4xl"><span className='font-bold text-pink-600'>Flat</span><span className='font-medium text-yellow-500'>Fusion</span></p>
+         <p className=" md:text-4xl text-2xl"><span className='font-bold text-pink-600'>Flat</span><span className='font-medium text-yellow-500'>Fusion</span></p>
         </div>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -90,12 +97,12 @@ const Header = () => {
  
   <div className="navbar-end ">
     <div> <label className="swap swap-rotate">
-  {/* this hidden checkbox controls the state */}
+  
   <input type="checkbox" onChange={handleToggle} checked={theme==="light"? false: true} />
 
   {/* sun icon */}
   <svg
-    className="swap-on h-10 w-10 fill-current"
+    className="swap-on md:h-10 md:w-10 w-5 h-5 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -104,7 +111,7 @@ const Header = () => {
 
   {/* moon icon */}
   <svg
-    className="swap-off h-10 w-10 fill-current"
+    className="swap-off md:h-10 md:w-10  w-5 h-5 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -116,14 +123,14 @@ const Header = () => {
         <div className='flex gap-2 p-2'>
 
           <div className="tooltip" data-tip={user.displayName}>
-             <img className='w-12 h-12 rounded-full border-2 border-green-500 ' src={user.photoURL} alt="" />
+             <img className='md:w-12 md:h-12 w-8 h-8 rounded-full border-2 border-green-500 ' src={user.photoURL} alt="" />
           </div>
           
         <a className="btn bg-blue-600 text-white rounded-2xl p-2" onClick={handleSignOut}><span className='text-2xl sm:text-xl'>Log Out</span></a>
         </div>
           :<div className='flex gap-2'>
-            <div> <Link to='/register' ><span className='sm:text-xl text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 font-medium'> Sign Up</span></Link></div>
-           <div> <Link to='/login' ><span className='sm:text-xl text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 font-medium'> Log In</span></Link></div>
+            <div> <Link to='/register' ><span className=' md:text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 md:font-medium'> Sign Up</span></Link></div>
+           <div> <Link to='/login' ><span className=' md:text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 md:font-medium'> Log In</span></Link></div>
             </div>}
         </div>
       </div>

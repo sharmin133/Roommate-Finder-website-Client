@@ -1,12 +1,24 @@
-# React + Vite
+    Project Name:
+     FlatFusion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    Project Overview:
+     RoomMate Finder is a web application that allows users to browse and list available roommate opportunities. It includes user authentication, room details view, and listing management features for a seamless experience.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+    Features:
+    i. Authentication System
+    ii. Room Listings
+    ii. User-Specific Listings
+    iii. user can update and delete list items
+    
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    Built With:
+
+     React
+     1. React Router
+     2. Firebase Auth
+     3. Tailwind CSS
+     4. SweetAlert2
+     5. Express.js (Backend)
+     6. MongoDB (Database)

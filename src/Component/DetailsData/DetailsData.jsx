@@ -44,7 +44,7 @@ const DetailsData = () => {
  <div className="card bg-base-100 w-2/3 shadow-xl items-center  ">
   <div className="card-body">
   
-   <div className='flex gap-3'>
+   <div className='md:flex gap-3'>
      <div>
       <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/>
     </div>

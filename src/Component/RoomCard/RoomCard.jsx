@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaHome, FaMoneyBill } from 'react-icons/fa';
 import { IoMdCheckmarkCircle } from 'react-icons/io';
 import {  IoLocationSharp } from 'react-icons/io5';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
 
 const RoomCard = ({room}) => {
 
+
     const {title,location,rentAmount,roomType,availability}=room;
+
+     const navigate = useNavigate();
+    const{user}=useContext(AuthContext)
     return (
-       <div className="card bg-base-100 w-3/4 shadow-2xl m-4 ">
+       <div className="card bg-base-100 w-3/4  shadow-2xl m-4 ">
   <div className="card-body bg-linear-to-r from-cyan to-blue-100 rounded-2xl">
-  <div className='flex gap-3'>
+  <div className=' flex gap-3'>
      <div>
-      {/* <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/> */}
+      <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/>
     </div>
             <div>
               <h2 className='text-2xl font-bold text-blue-800'>{title}</h2>
@@ -23,10 +28,18 @@ const RoomCard = ({room}) => {
             </div>
    </div>
     <div className="card-actions justify-end">
-      <Link to={`/detailsData/${room._id}`} >
-                  <button className='btn btn-primary'>See More</button>
-                
-                </Link>
+      <button
+            onClick={() => {
+              if (!user) {
+                navigate('/login', { state: { from: `/detailsData/${room._id}` } });
+              } else {
+                navigate(`/detailsData/${room._id}`);
+              }
+            }}
+            className="btn btn-primary"
+          >
+            See More
+          </button>
     </div>
   </div>
 </div>
