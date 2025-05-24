@@ -18,7 +18,7 @@ const AddRoommate = () => {
 
         newRoom.likes = 0;
         
-     fetch('http://localhost:3000/roommates', {
+     fetch('https://roommate-finder-website-server.vercel.app/roommates', {
          method: 'POST',
          headers: {
           'content-type': 'application/json'
@@ -44,7 +44,7 @@ const AddRoommate = () => {
         <ToastContainer position="top-center" autoClose={3000} />
           <div className="card mx-auto mt-10 mb-20 w-full  max-w-xl  shrink-0 shadow-3xl bg-linear-to-r from-cyan-100 to-blue-300">
             <div className="card-body">
-            <h1 className="text-5xl font-bold text-violet-700">Add Roommate</h1>
+            <h1 className="text-5xl font-bold text-violet-700">Add Information</h1>
               <form onSubmit={handleFormData} className="fieldset shadow-2xl ">
 <div className='p-8 '>
   

@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 const UpdateData = () => {
 
-    const {_id,title,location,rentAmount,name,email,roomType,description,preference,availability,contactInfo}=useLoaderData();
+    const {_id,title,photo,location,rentAmount,name,email,roomType,description,preference,availability,contactInfo}=useLoaderData();
         const handleFormUpdateData=e=>{
             e.preventDefault();
             const form=e.target;
@@ -14,7 +14,7 @@ const UpdateData = () => {
             const updatedRoom=Object.fromEntries(formData.entries());
             // console.log(updatedRoom);
     
-         fetch(`http://localhost:3000/roommates/${_id}`,{
+         fetch(`https://roommate-finder-website-server.vercel.app/roommates/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':"application/json"
@@ -42,7 +42,7 @@ const UpdateData = () => {
         <input type="text" name="title" className="input input-bordered w-full" placeholder="Looking for a roommate in NYC"  defaultValue={title}required />
 
          <label className="label">Photo URL</label>
-          <input type="text" className="input input-bordered w-full" name="photo" placeholder="Your photo URL" />
+          <input type="text" className="input input-bordered w-full" defaultValue={photo} name="photo" placeholder="Your photo URL" />
         
         <label className="label">Location</label>
         <input type="text" name='location' className="input input-bordered w-full" defaultValue={location} required />

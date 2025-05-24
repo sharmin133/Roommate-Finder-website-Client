@@ -28,19 +28,19 @@ const router = createBrowserRouter([
     children:[
 
       {index:true, 
-      loader: ()=>fetch('http://localhost:3000/roommates/available'),
+      loader: ()=>fetch('https://roommate-finder-website-server.vercel.app/roommates/available'),
       element:<Home></Home>},
       { path:'login', element:<Login></Login> },
       {path:'register', element:<Register></Register>},
       {path:'addRoommate', element:<PrivateRoute><AddRoommate></AddRoommate></PrivateRoute>},
       {
         path:'browsingList',
-        loader: ()=>fetch('http://localhost:3000/roommates'),
+        loader: ()=>fetch('https://roommate-finder-website-server.vercel.app/roommates'),
          element:<BrowsingList></BrowsingList>
         },
         {
           path:'detailsData/:id',
-          loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
+          loader:({params})=>fetch(`https://roommate-finder-website-server.vercel.app/roommates/${params.id}`),
           element:<DetailsData></DetailsData>
 
         },
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
          },
          {
           path:'updateListing/:id',
-          loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
+          loader:({params})=>fetch(`https://roommate-finder-website-server.vercel.app/roommates/${params.id}`),
           element:<UpdateData> </UpdateData>
          },
          

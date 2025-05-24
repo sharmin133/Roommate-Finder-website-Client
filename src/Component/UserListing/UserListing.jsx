@@ -9,7 +9,7 @@ const UserListing = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/roommates/email/${user.email}`)
+      fetch(`https://roommate-finder-website-server.vercel.app/roommates/email/${user.email}`)
         .then(res => res.json())
         .then(data => setRooms(data));
     }
@@ -26,7 +26,7 @@ const UserListing = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/roommates/${_id}`, {
+        fetch(`https://roommate-finder-website-server.vercel.app/roommates/${_id}`, {
           method: "DELETE"
         })
           .then(res => res.json())
@@ -50,11 +50,11 @@ const UserListing = () => {
       <table className="table-fixed w-full text-sm md:text-base">
         <thead>
           <tr className="bg-amber-300 text-center">
-            <th className="hidden md:table-cell">Photo</th>
+            <th className="hidden md:table-cell"></th>
             <th className="text-blue-800 font-bold md:text-2xl text-xl">Title</th>
             <th className="hidden md:table-cell text-cyan-800 md:text-2xl text-xl">Location</th>
             <th className="text-amber-800 md:text-2xl text-xl">Rent Amount</th>
-            <th className="text-center">Action</th>
+            <th className="text-center"></th>
           </tr>
         </thead>
         <tbody>
@@ -67,16 +67,16 @@ const UserListing = () => {
                   className="w-60 h-40 object-cover rounded-xl mx-auto shadow-2xl"
                 />
               </td>
-              <td className="text-blue-800 font-bold px-2 py-2">{room.title}</td>
-              <td className="hidden md:table-cell text-cyan-800 px-2 py-2">{room.location}</td>
-              <td className="text-amber-800 px-2 py-2">${room.rentAmount}</td>
+              <td className="text-blue-800 font-bold px-2 py-2 md:text-2xl">{room.title}</td>
+              <td className="hidden md:table-cell md:text-xl text-cyan-800 px-2 py-2">{room.location}</td>
+              <td className="text-amber-800 px-2 py-2 md:text-xl">${room.rentAmount}</td>
               <td className="px-2 py-2">
                 <div className="flex flex-col md:flex-row gap-2 justify-center">
                   <Link to={`/updateListing/${room._id}`}>
-                    <button className="btn btn-sm btn-primary w-full md:w-auto">Update</button>
+                    <button className="btn btn-sm md:btn-lg btn-primary w-full md:w-auto">Update</button>
                   </Link>
                   <button
-                    className="btn btn-sm btn-primary w-full md:w-auto"
+                    className="btn btn-sm  md:btn-lg btn-primary w-full md:w-auto"
                     onClick={() => handleDeleteData(room._id)}
                   >
                     Delete

@@ -83,8 +83,8 @@ const Header = () => {
       </ul>
     </div>
    <div className="flex items-center ">
-          <img className="md:w-24 md:h-24 w-12 h-12" src="/AllPictures/logo.png" alt="AppNest Logo" />
-         <p className=" md:text-4xl text-2xl"><span className='font-bold text-pink-600'>Flat</span><span className='font-medium text-yellow-500'>Fusion</span></p>
+          <img className="md:w-24 md:h-24 w-10 h-10" src="/AllPictures/logo.png" alt="AppNest Logo" />
+         <p className=" md:text-4xl text-xl"><span className='font-bold text-pink-600'>Flat</span><span className='font-medium text-yellow-500'>Fusion</span></p>
         </div>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -128,9 +128,9 @@ const Header = () => {
           
         <a className="btn bg-blue-600 text-white rounded-2xl p-2" onClick={handleSignOut}><span className='text-2xl sm:text-xl'>Log Out</span></a>
         </div>
-          :<div className='flex gap-2'>
-            <div> <Link to='/register' ><span className=' md:text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 md:font-medium'> Sign Up</span></Link></div>
-           <div> <Link to='/login' ><span className=' md:text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 md:font-medium'> Log In</span></Link></div>
+          :<div className='flex gap-2 '>
+            <div> <Link to='/register' ><span className=' md:text-2xl bg-blue-600 text-sm text-white rounded-2xl px-4 py-2 md:font-medium'> Sign Up</span></Link></div>
+           <div> <Link to='/login' ><span className=' md:text-2xl text-sm bg-blue-600 text-white rounded-2xl px-4 py-2 md:font-medium'> Log In</span></Link></div>
             </div>}
         </div>
       </div>

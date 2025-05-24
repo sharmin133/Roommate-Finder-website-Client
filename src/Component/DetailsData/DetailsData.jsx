@@ -18,7 +18,7 @@ const DetailsData = () => {
       return;
     }
 
-    fetch(`http://localhost:3000/roommates/${room._id}`, {
+    fetch(`https://roommate-finder-website-server.vercel.app/roommates/${room._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
