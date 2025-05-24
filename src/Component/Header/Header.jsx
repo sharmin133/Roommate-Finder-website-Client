@@ -114,7 +114,11 @@ const Header = () => {
      
    {user?
         <div className='flex'>
-        <img className='w-12 h-12 rounded-3xl p-1 ' src={user.photoURL} alt="" />
+
+          <div className="tooltip" data-tip={user.displayName}>
+             <img className='w-12 h-12 rounded-full border-2 border-green-500 ' src={user.photoURL} alt="" />
+          </div>
+          
         <a className="btn bg-blue-600 text-white rounded-2xl p-2" onClick={handleSignOut}><span className='text-2xl sm:text-xl'>Sign out</span></a>
         </div>
           :<Link to='/login' ><span className='sm:text-xl text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 font-medium'>Sign in</span></Link>}

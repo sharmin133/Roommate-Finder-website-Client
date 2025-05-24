@@ -2,6 +2,10 @@ import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../Context/AuthContext';
+import { IoMdCheckmarkCircle } from 'react-icons/io';
+import { FaHome, FaMoneyBill, FaSmoking } from 'react-icons/fa';
+import { IoLocationSharp } from 'react-icons/io5';
+import { AiOutlineLike } from 'react-icons/ai';
 
 const DetailsData = () => {
   const room = useLoaderData();
@@ -32,7 +36,7 @@ const DetailsData = () => {
   return (
   
 
-    <div>
+    <div className=' flex flex-col items-center justify-center bg-gray-50 px-4'>
        <ToastContainer position="top-center" ></ToastContainer>
 <div>
       <h1 className='text-4xl text-green-800 text-center font-medium md:pb-20 md:pt-10 py-8 '>{like} people interested in Place</h1>
@@ -46,21 +50,22 @@ const DetailsData = () => {
     </div>
             <div>
               <h2 className='text-2xl font-bold text-blue-800'>{room.title}</h2>
-                <p className='text-cyan-800 text-xl'>{room.location}</p>
-              <p className=' text-xl text-amber-800'>${room.rentAmount}</p>
-              <p className=' text-xl text-amber-800'>{room.roomType}</p>
-              <p className=' text-xl text-amber-800'>{room.preference}</p>
-               <p className=' text-xl text-amber-800'>{room.availability}</p>
+                              <div className='flex  justify-around items-center gap-1'><span><IoLocationSharp  size={16} fill='purple'  /></span><p className='text-cyan-900 text-xl'>{room.location}</p></div>
+                            <div className='flex  justify-around items-center gap-1'><span><FaMoneyBill size={18} fill='green' /></span><p className=' text-xl '>Rent: ${room.rentAmount}</p></div>
+                           <div  className='flex  justify-around items-center gap-1'><span><FaHome   size={18} fill='purple'/></span> <p className=' text-xl text-amber-900 '>{room.roomType}</p></div>
+                            <div className='flex  justify-around items-center gap-1'><span><IoMdCheckmarkCircle size={16} fill='green' /></span> <p className=' text-xl text-green-600'>{room.availability}</p></div>
+            <div className='flex  justify-around items-center gap-1'> <span><FaSmoking  size={16} fill='red' /></span> <p className=' text-xl text-blue-700'>{room.preference}</p></div>
+              
               <p className=' text-xl text-amber-800 text-center'>{room.description}</p>
             </div>
    </div>
-    <div className="card-actions justify-end">
-     <button onClick={handleLike} className='btn btn-primary'>Like</button>
-       {like > 0 && (
+    <div className="card-actions justify-end ">
+     <div className='flex flex-col gap-2'><button onClick={handleLike} className='btn btn-primary'> Like<AiOutlineLike size={20} /></button>
+      <div> {like > 0 && (
         <div>
           <strong>Contact: {room.contactInfo}</strong>
         </div>
-      )}
+      )}</div></div>
     </div>
   </div>
 </div>
