@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
-
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css'
 const BrowsingList = () => {
     const rooms=useLoaderData();
     console.log(rooms)
@@ -28,6 +29,8 @@ const BrowsingList = () => {
               <td>
                 <Link to={`/detailsData/${room._id}`} >
                   <button className='btn btn-primary'>See More</button>
+
+                <Tooltip />
                 </Link>
               </td>
 

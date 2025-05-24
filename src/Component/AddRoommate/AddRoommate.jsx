@@ -17,6 +17,7 @@ const AddRoommate = () => {
         console.log(newRoom);
 
         newRoom.likes = 0;
+        
      fetch('http://localhost:3000/roommates', {
          method: 'POST',
          headers: {

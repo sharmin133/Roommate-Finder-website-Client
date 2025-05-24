@@ -31,17 +31,18 @@ const UpdateData = () => {
         }
 
     return (
-        <div>
-             <div className='max-w-xl mx-auto p-4 '>
+       
+             <div className='bg-gradient-to-r from-sky-50 to-violet-200 py-10  '>
             <ToastContainer position='top-center' autoClose={3000}></ToastContainer>
-<div className="text-xl font-semibold mb-4">Add Roommate Listing</div>
-     <form onSubmit={handleFormUpdateData} className="fieldset ">
+          <div className="w-full md:w-2/3 lg:w-1/2 mx-auto">
+          <h2 className='text-4xl text-green-600 font-bold text-center p-3 '>Update Information</h2>
+         <form onSubmit={handleFormUpdateData} className="fieldset shadow-2xl ">
 
         <label className="label">Title</label>
         <input type="text" name="title" className="input input-bordered w-full" placeholder="Looking for a roommate in NYC"  defaultValue={title}required />
 
          <label className="label">Photo URL</label>
-          <input type="text" className="input" name="photo" placeholder="Your photo URL" />
+          <input type="text" className="input input-bordered w-full" name="photo" placeholder="Your photo URL" />
         
         <label className="label">Location</label>
         <input type="text" name='location' className="input input-bordered w-full" defaultValue={location} required />
@@ -86,11 +87,12 @@ const UpdateData = () => {
         <label  className="label">User Name</label>
         <input name='name' type="text" className="input input-bordered w-full" defaultValue={name} readOnly />
 
-        <button  type="submit" className="btn btn-neutral w-full mt-4">Update</button>
+        <button  type="submit" className="btn bg-green-600 text-white font-bold text-xl w-full mt-4">Update</button>
       </form>
+      </div>
 
         </div>
-        </div>
+       
     );
 };
 

@@ -89,7 +89,7 @@ const Register = () => {
   <ToastContainer position="top-center" autoClose={3000} />
     <div className="card mx-auto mt-10 w-full max-w-sm shrink-0 shadow-3xl bg-linear-to-r from-amber-200 to-amber-500">
       <div className="card-body">
-        <h1 className="text-5xl font-bold text-violet-700">Register Now</h1>
+        <h1 className="text-5xl font-bold text-violet-700">Sign Up Now</h1>
         <form onSubmit={handleRegister} className="fieldset">
           <label className="label">Name</label>
           <input type="text" className="input" name="name" placeholder="Name" />
@@ -110,7 +110,7 @@ const Register = () => {
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
-          <button className="btn btn-neutral mt-4 text-white bg-blue-600">Register</button>
+          <button className="btn btn-neutral mt-4 text-white bg-blue-600">Sign Up</button>
         </form>
 
         {errorMessage && <p className="text-red-600">{errorMessage}</p>}

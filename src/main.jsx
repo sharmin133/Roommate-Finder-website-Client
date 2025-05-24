@@ -18,6 +18,7 @@ import DetailsData from './Component/DetailsData/DetailsData.jsx';
 import UserListing from './Component/UserListing/UserListing.jsx';
 import UpdateData from './Component/UpdateData/UpdateData.jsx';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
+import Lottie from 'lottie-react';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,9 @@ const router = createBrowserRouter([
           path:'updateListing/:id',
           loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
           element:<UpdateData> </UpdateData>
+         },
+         {
+          path:'lottie',element:<Lottie></Lottie>
          }
     ]
   },

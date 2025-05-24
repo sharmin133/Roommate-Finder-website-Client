@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='bg-base-100 text-base-content py-8 shadow-inner'>
              
              <div className='flex items-center text-center justify-center border-t-2 '> <img className='w-15 h-15 rounded-3xl' src="/AllPictures/logo.png" alt="" />
-            <a className="btn btn-ghost text-4xl text-green-600 font-bold">FlatFusion</a>
+            <p className=" text-4xl"><span className='font-bold text-pink-600'>Flat</span><span className='font-medium text-yellow-500'>Fusion</span></p>
          </div> 
             <p className='text-center text-xl'> Give residents a cross-platform roommate matching solution to find the perfect roommate, seamlessly integrated with your management system.</p>
        

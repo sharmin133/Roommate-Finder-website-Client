@@ -42,12 +42,12 @@ const Header = () => {
        <li><NavLink to='/addRoommate'  className='text-xl  font-semibold' >Add Roommate</NavLink></li>
        <li><NavLink to='/browsingList'  className='text-xl  font-semibold' >Browse Listing</NavLink></li>
        
-       <li><NavLink to='/login'  className='text-xl  font-semibold'>Login</NavLink></li>
-       <li><NavLink to='/register' className='text-xl  font-semibold'>Register</NavLink></li>
         <li><NavLink to='/detailsData' className='text-xl font-semibold'>DetailsData</NavLink></li>
         <li>
         
           <NavLink to='/myListing' className='text-xl  font-semibold'>My Listings</NavLink>
+
+          <NavLink to='/lottie'>Lottie</NavLink>
       </li>
 
 
@@ -61,7 +61,7 @@ const Header = () => {
 
 
 
-       <div className="navbar bg-base-100 shadow-sm">
+       <div className="navbar bg-base-100 shadow-sm ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -77,7 +77,7 @@ const Header = () => {
     </div>
    <div className="flex items-center ">
           <img className="md:w-24 md:h-24 w-12 h-12" src="/AllPictures/logo.png" alt="AppNest Logo" />
-          <p className="lg:text-4xl sm:text-xl font-bold text-green-600">FlatFusion</p>
+         <p className=" text-4xl"><span className='font-bold text-pink-600'>Flat</span><span className='font-medium text-yellow-500'>Fusion</span></p>
         </div>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -88,8 +88,8 @@ const Header = () => {
     </ul>
   </div>
  
-  <div className="navbar-end">
-     <label className="swap swap-rotate">
+  <div className="navbar-end ">
+    <div> <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
   <input type="checkbox" onChange={handleToggle} checked={theme==="light"? false: true} />
 
@@ -110,18 +110,21 @@ const Header = () => {
     <path
       d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
   </svg>
-</label>
+</label></div>
      
    {user?
-        <div className='flex'>
+        <div className='flex gap-2 p-2'>
 
           <div className="tooltip" data-tip={user.displayName}>
              <img className='w-12 h-12 rounded-full border-2 border-green-500 ' src={user.photoURL} alt="" />
           </div>
           
-        <a className="btn bg-blue-600 text-white rounded-2xl p-2" onClick={handleSignOut}><span className='text-2xl sm:text-xl'>Sign out</span></a>
+        <a className="btn bg-blue-600 text-white rounded-2xl p-2" onClick={handleSignOut}><span className='text-2xl sm:text-xl'>Log Out</span></a>
         </div>
-          :<Link to='/login' ><span className='sm:text-xl text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 font-medium'>Sign in</span></Link>}
+          :<div className='flex gap-2'>
+            <div> <Link to='/register' ><span className='sm:text-xl text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 font-medium'> Sign Up</span></Link></div>
+           <div> <Link to='/login' ><span className='sm:text-xl text-2xl bg-blue-600 text-white rounded-2xl px-4 py-2 font-medium'> Log In</span></Link></div>
+            </div>}
         </div>
       </div>
 
