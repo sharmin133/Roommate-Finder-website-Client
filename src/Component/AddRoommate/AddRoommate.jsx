@@ -14,7 +14,7 @@ const AddRoommate = () => {
         const form=e.target;
         const formData= new FormData(form);
         const newRoom=Object.fromEntries(formData.entries());
-        console.log(newRoom);
+        // console.log(newRoom);
 
         newRoom.likes = 0;
         
