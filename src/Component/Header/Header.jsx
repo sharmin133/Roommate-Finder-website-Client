@@ -123,7 +123,7 @@ const Header = () => {
         <div className='flex gap-2 p-2'>
 
           <div className="tooltip" data-tip={user.displayName}>
-             <img className='md:w-12 md:h-12 w-8 h-8 rounded-full border-2 border-green-500 ' src={user.photoURL} alt="" />
+             <img className='md:w-12 md:h-12 w-8 h-6 rounded-full border-2 border-green-500 ' src={user.photoURL} alt="" />
           </div>
           
         <a className="btn bg-blue-600 text-white rounded-2xl p-2" onClick={handleSignOut}><span className='text-2xl sm:text-xl'>Log Out</span></a>
