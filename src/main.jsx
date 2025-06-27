@@ -22,82 +22,67 @@ import BonusCard from './Component/BonusCard/BonusCard.jsx';
 import Profile from './Component/Profile/Profile.jsx';
 import AboutUs from './Component/AboutUs/AboutUs.jsx';
 import FooterInfo from './Component/FooterInfo/FooterInfo.jsx';
-
-
-
+import DashboardLayout from './Component/Dashboard/overview/DashboardLayout/DashboardLayout.jsx';
+import Overview from './Component/Dashboard/overview/Overview.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
-    children:[
-
-      {index:true, 
-      loader: ()=>fetch('https://roommate-finder-website-server.vercel.app/roommates/available'),
-      element:<Home></Home>},
-      { path:'login', element:<Login></Login> },
-      {path:'register', element:<Register></Register>},
-      {path:'addRoommate', element:<PrivateRoute><AddRoommate></AddRoommate></PrivateRoute>},
+    element: <Root />, // Root contains Header, Footer, etc.
+    children: [
       {
-        path:'browsingList',
-        loader: ()=>fetch('https://roommate-finder-website-server.vercel.app/roommates'),
-         element:<BrowsingList></BrowsingList>
-        },
-        {
-          path:'detailsData/:id',
-          loader:({params})=>fetch(`https://roommate-finder-website-server.vercel.app/roommates/${params.id}`),
-          element:<DetailsData></DetailsData>
+        index: true,
+        loader: () => fetch('https://roommate-finder-website-server.vercel.app/roommates/available'),
+        element: <Home />,
+      },
+      { path: 'login', element: <Login /> },
+      { path: 'register', element: <Register /> },
+      { path: 'addRoommate', element: <PrivateRoute><AddRoommate /></PrivateRoute> },
+      {
+        path: 'browsingList',
+        loader: () => fetch('https://roommate-finder-website-server.vercel.app/roommates'),
+        element: <BrowsingList />,
+      },
+      {
+        path: 'detailsData/:id',
+        loader: ({ params }) =>
+          fetch(`https://roommate-finder-website-server.vercel.app/roommates/${params.id}`),
+        element: <DetailsData />,
+      },
+      {
+        path: 'updateListing/:id',
+        loader: ({ params }) =>
+          fetch(`https://roommate-finder-website-server.vercel.app/roommates/${params.id}`),
+        element: <UpdateData />,
+      },
+      { path: 'bonus', element: <BonusCard /> },
+      { path: 'aboutUs', element: <AboutUs /> },
+      { path: 'info/:section', element: <FooterInfo /> },
 
-        },
-
-        {
-          path: 'myListing',
-          element:<PrivateRoute> <UserListing></UserListing></PrivateRoute>
-         },
-         {
-          path:'updateListing/:id',
-          loader:({params})=>fetch(`https://roommate-finder-website-server.vercel.app/roommates/${params.id}`),
-          element:<UpdateData> </UpdateData>
-         },
-         {
-          path:'bonus',
-          element:<BonusCard></BonusCard>
-         },
-         {
-          path:'profile',
-          element:<PrivateRoute><Profile></Profile></PrivateRoute>
-         },
-         {
-          path:'aboutUs',
-          element:<AboutUs></AboutUs>
-         },
-         {
-          path:"/info/:section",
-          element:<FooterInfo></FooterInfo>
-
-         }
-        
-         
-    ]
+      // 🧩 Dashboard as nested route inside Root layout
+      {
+        path: 'dashboard',
+        element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+        children: [
+          { index: true, element: <Overview /> },
+          { path: 'profile', element: <Profile /> },
+          { path: 'myListing', element: <UserListing /> },
+        ],
+      },
+    ],
   },
-
   {
     path: "*",
-    element: <>
-    <NotFound></NotFound>
-    </>
-  }
+    element: <NotFound />,
+  },
 ]);
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  
-<AuthProvider>
-   
-    <RouterProvider router={router} />
- 
- 
-</AuthProvider>
-  </StrictMode>,
-)
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </StrictMode>
+);
