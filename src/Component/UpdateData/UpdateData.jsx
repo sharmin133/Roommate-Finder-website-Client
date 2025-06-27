@@ -87,7 +87,7 @@ const UpdateData = () => {
         <label  className="label">User Name</label>
         <input name='name' type="text" className="input input-bordered w-full" defaultValue={name} readOnly />
 
-        <button  type="submit" className="btn bg-green-600 text-white font-bold text-xl w-full mt-4">Update</button>
+        <button  type="submit" className="btn bg-green-700 hover:bg-green-800   text-white font-bold text-xl w-full mt-4">Update</button>
       </form>
       </div>
 

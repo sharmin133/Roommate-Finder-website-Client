@@ -43,16 +43,15 @@ const Header = () => {
        <li><NavLink to='/'  className='text-xl  font-semibold' >Home</NavLink></li>
        <li><NavLink to='/addRoommate'  className='text-xl  font-semibold' >Add Roommate</NavLink></li>
        <li><NavLink to='/browsingList'  className='text-xl  font-semibold' >Browse Listing</NavLink></li>
-       
+
+        <li><NavLink className='text-xl  font-semibold' to='/aboutUs'>About Us</NavLink></li>
       
         {
           user&&
           <>  
-          <li>
-        
+          <li><NavLink className='text-xl  font-semibold' to='/profile'>MyProfile</NavLink></li>
+          <li>  
           <NavLink to='/myListing' className='text-xl  font-semibold'>My Listings</NavLink>
-
-        
       </li>
       </>
         }
@@ -62,13 +61,12 @@ const Header = () => {
     
     </>
     return (
-      
-        <div>
+
         
 
 
 
-       <div className="navbar bg-base-100 shadow-sm ">
+      <div className="navbar bg-[#ECFAE5] shadow-sm sticky top-0 z-50 px-4 md:px-10">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden " >
@@ -84,7 +82,7 @@ const Header = () => {
     </div>
    <div className="flex items-center ">
           <img className="md:w-24 md:h-24 w-10 h-10" src="/AllPictures/logo.png" alt="AppNest Logo" />
-         <p className=" md:text-4xl text-xl"><span className='font-bold text-pink-600'>Flat</span><span className='font-medium text-yellow-500'>Fusion</span></p>
+         <p className=" md:text-4xl text-xl"><span className='font-bold text-pink-600'>Flat</span><span className='font-medium text-yellow-400'>Fusion</span></p>
         </div>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -126,17 +124,14 @@ const Header = () => {
              <img className='md:w-12 md:h-12 w-8 h-6 rounded-full border-2 border-green-500 ' src={user.photoURL} alt="" />
           </div>
           
-        <a className="btn bg-blue-600 text-white rounded-2xl p-2" onClick={handleSignOut}><span className='text-2xl sm:text-xl'>Log Out</span></a>
+        <a className="btn bg-yellow-400 text-white rounded-2xl p-2" onClick={handleSignOut}><span className='text-2xl sm:text-xl'>Log Out</span></a>
         </div>
           :<div className='flex gap-2 '>
-            <div> <Link to='/register' ><span className=' md:text-2xl bg-blue-600 text-sm text-white rounded-2xl px-4 py-2 md:font-medium'> Sign Up</span></Link></div>
-           <div> <Link to='/login' ><span className=' md:text-2xl text-sm bg-blue-600 text-white rounded-2xl px-4 py-2 md:font-medium'> Log In</span></Link></div>
+            <div> <Link to='/register' ><span className=' md:text-2xl bg-yellow-400 text-sm text-white rounded-2xl px-4 py-2 md:font-medium'> Sign Up</span></Link></div>
+           <div> <Link to='/login' ><span className=' md:text-2xl text-sm bg-yellow-400 text-white rounded-2xl px-4 py-2 md:font-medium'> Log In</span></Link></div>
             </div>}
         </div>
       </div>
-
-
-</div>
     )
 }
 

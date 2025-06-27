@@ -46,7 +46,7 @@ const DetailsData = () => {
   
    <div className='md:flex gap-3'>
      <div>
-      <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/>
+      {/* <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/> */}
     </div>
             <div>
               <h2 className='text-2xl font-bold text-blue-800'>{room.title}</h2>
@@ -60,7 +60,7 @@ const DetailsData = () => {
             </div>
    </div>
     <div className="card-actions justify-end ">
-     <div className='flex flex-col gap-2'><button onClick={handleLike} className='btn btn-primary'> Like<AiOutlineLike size={20} /></button>
+     <div className='flex flex-col gap-2'><button onClick={handleLike} className='btn bg-yellow-400'> Like<AiOutlineLike size={20} /></button>
       <div> {like > 0 && (
         <div>
           <strong>Contact: {room.contactInfo}</strong>

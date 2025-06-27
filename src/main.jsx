@@ -18,6 +18,11 @@ import DetailsData from './Component/DetailsData/DetailsData.jsx';
 import UserListing from './Component/UserListing/UserListing.jsx';
 import UpdateData from './Component/UpdateData/UpdateData.jsx';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
+import BonusCard from './Component/BonusCard/BonusCard.jsx';
+import Profile from './Component/Profile/Profile.jsx';
+import AboutUs from './Component/AboutUs/AboutUs.jsx';
+import FooterInfo from './Component/FooterInfo/FooterInfo.jsx';
+
 
 
 
@@ -54,6 +59,24 @@ const router = createBrowserRouter([
           loader:({params})=>fetch(`https://roommate-finder-website-server.vercel.app/roommates/${params.id}`),
           element:<UpdateData> </UpdateData>
          },
+         {
+          path:'bonus',
+          element:<BonusCard></BonusCard>
+         },
+         {
+          path:'profile',
+          element:<PrivateRoute><Profile></Profile></PrivateRoute>
+         },
+         {
+          path:'aboutUs',
+          element:<AboutUs></AboutUs>
+         },
+         {
+          path:"/info/:section",
+          element:<FooterInfo></FooterInfo>
+
+         }
+        
          
     ]
   },

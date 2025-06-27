@@ -99,7 +99,7 @@ const AddRoommate = () => {
         <label  className="label">User Name</label>
         <input name='name' type="text" className="input input-bordered w-full" defaultValue={user.displayName} readOnly />
 
-        <button  type="submit" className="btn btn-neutral w-full mt-4">Add</button>
+        <button  type="submit" className="btn bg-yellow-400 text-white font-bold text-2xl w-full mt-4">Add</button>
 </div>
       </form>
                 

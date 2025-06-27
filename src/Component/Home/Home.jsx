@@ -4,6 +4,8 @@ import { useLoaderData } from 'react-router';
 import RoomCard from '../RoomCard/RoomCard';
 import { BiSolidQuoteAltLeft } from 'react-icons/bi';
 import { Fade, Slide, Zoom} from 'react-awesome-reveal';
+import ReferBanner from '../ReferBanner/ReferBanner';
+import Review from '../Review/Review';
 
 
 const Home = () => {
@@ -21,10 +23,10 @@ const Home = () => {
 
 
              <Fade cascade damping={0.2}>
-          <div className='mt-10 '>
+          <div className='mt-10 bg-[#DDF6D2] '>
             <h2 className='md:text-5xl text-xl text-center font-bold text-blue-800 p-4'>Meet Your Ideal Roommate Match </h2>
             <p className='text-xl text-center text-yellow-500 p-4'>Meet top roommate matches selected for trustworthiness, verified information, and a commitment to peaceful co-living</p>
-              <div className='grid grid-cols-1 md:grid-cols-2 md:ml-20'>
+             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4 '>
 
                 {
 
@@ -34,11 +36,14 @@ const Home = () => {
           </div>
               </Fade>
 
+<ReferBanner></ReferBanner>
+
+<Review></Review>
 
 
 <Zoom triggerOnce>
            <div className=' mx-10 mt-10 shadow-sm'>
-            <h2 className=' text-3xl  md:text-5xl text-center font-bold text-blue-800 p-4'>Know Before You Nest </h2>
+            <h2 className=' text-3xl  md:text-5xl text-center font-bold text-emerald-800 p-4'>Know Before You Nest </h2>
             <p className=' text-2xl text-center text-yellow-500'>Common questions and helpful answers for new users.</p>
 
             <div className="collapse collapse-arrow bg-base-100 border border-base-300">
@@ -67,8 +72,8 @@ const Home = () => {
 
 
 
-<Fade direction="up" cascade>
-            <div className='mt-10 ml-5 shadow-sm'>
+{/* <Fade direction="up" cascade>
+            <div className='mt-10  shadow-sm bg-[#CAE8BD]'>
  <h2 className='text-3xl md:text-5xl text-center font-bold text-blue-800 p-4  '>Success Story </h2>
 
 <div className='grid grid-cols-1 md:grid-cols-3 mt-10 md:ml-15 gap-3'>
@@ -114,7 +119,7 @@ const Home = () => {
 
             </div>
 
-           </Fade>
+           </Fade> */}
         </div>
     );
 };

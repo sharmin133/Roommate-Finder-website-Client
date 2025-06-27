@@ -7,7 +7,7 @@ const AutoPlay = () => {
 
   
     return (
-      <div className="carousel w-full md:h-[700px] h-[300px]">
+      <div className="carousel w-full md:h-[550px] h-[300px]">
   <div id="slide1" className="carousel-item relative w-full">
     <img
     
@@ -15,7 +15,7 @@ const AutoPlay = () => {
        src="/AllPictures/header-banner.jpg"
       className="w-full" />
 
-<div className="absolute inset-0 bg-black opacity-20"></div>
+<div className="absolute inset-0 bg-black opacity-60"></div>
 
 
   <div className="absolute top-3 md:top-10 left-1/2 transform -translate-x-1/2 text-center p-4 text-white">
