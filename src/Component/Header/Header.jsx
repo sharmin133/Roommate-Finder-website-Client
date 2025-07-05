@@ -89,8 +89,8 @@ const Header = () => {
   </>;
 
   return (
-    <div className="navbar bg-[#FFFBDE] dark:bg-gray-900 shadow-sm sticky top-0 z-50 px-4 md:px-10">
-      <div className="navbar-start">
+    <div className="navbar bg-pink-100 dark:bg-gray-900 shadow-sm sticky top-0 z-50 px-4 md:px-10">
+      <div className="navbar-start mx-auto ">
         <div className="dropdown">
           <div
             tabIndex={0}
@@ -116,12 +116,12 @@ const Header = () => {
         </div>
         <div className="flex items-center">
           <img
-            className="md:w-24 md:h-24 w-10 h-10"
+            className="md:w-16 md:h-16 w-8 h-8"
             src="/AllPictures/logo.png"
             alt="AppNest Logo"
           />
           <p className="md:text-4xl text-xl text-gray-900 dark:text-gray-100">
-            <span className='font-bold text-pink-600'>Flat</span>
+            <span className='font-bold text-pink-400'>Flat</span>
             <span className='font-medium text-yellow-400'>Fusion</span>
           </p>
         </div>
@@ -172,9 +172,8 @@ const Header = () => {
 
             <button
               onClick={handleSignOut}
-              className="btn bg-yellow-400 text-white rounded-2xl p-2"
-            >
-              <span className="text-2xl sm:text-xl">Log Out</span>
+              className="md:text-2xl bg-yellow-400 text-sm text-white rounded-2xl px-2 py-1 md:font-medium"  >
+              <span className="md:text-2xl text-sm sm:text-xl">Log Out</span>
             </button>
           </div>
         ) : (

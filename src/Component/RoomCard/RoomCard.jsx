@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+
+         import React, { useContext } from 'react';
 import { FaHome, FaMoneyBill } from 'react-icons/fa';
 import { IoMdCheckmarkCircle } from 'react-icons/io';
 import { IoLocationSharp } from 'react-icons/io5';
@@ -11,41 +12,29 @@ const RoomCard = ({ room }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="card bg-white dark:bg-gray-800 shadow-2xl mx-auto w-full max-w-md rounded-2xl transition-colors duration-300">
+    <div className="card bg-white dark:bg-gray-800 shadow-2xl mx-auto w-full max-w-md rounded-2xl transition-colors duration-300 border border-pink-100 dark:border-pink-600">
       <div className="card-body rounded-2xl">
         <div className="md:flex gap-3">
+        <div>
+         
+             <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/> </div> 
           <div>
-            {/* Uncomment and adjust image if needed */}
-            {/* <img src={room.photo} alt="" className="w-80 h-50 object-cover rounded-xl shadow-2xl"/> */}
-          </div>
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-blue-800 dark:text-blue-400">
+            <h2 className="text-xl md:text-xl font-bold text-blue-800 dark:text-blue-400">
               {title}
             </h2>
-            <div className="flex justify-around items-center gap-1">
-              <span>
-                <IoLocationSharp size={16} fill="purple" />
-              </span>
-              <p className="text-cyan-900 dark:text-cyan-300 text-xl">{location}</p>
+            <div className="flex items-center gap-2 mt-2">
+              <IoLocationSharp size={16} className="text-pink-600" />
+              <p className="text-blue-900 dark:text-pink-300 ">{location}</p>
             </div>
-            <div className="flex justify-around items-center gap-1">
-              <span>
-                <FaMoneyBill size={18} fill="green" />
-              </span>
-              <p className="text-xl text-gray-800 dark:text-gray-200">
-                Rent: ${rentAmount}
+            <div className="flex items-center gap-2 mt-2">
+              <FaMoneyBill size={18} className="text-yellow-400" />
+              <p className=" text-gray-800 dark:text-gray-200">
+                Rent: <span className="text-yellow-500">${rentAmount}</span>
               </p>
             </div>
-            {/* Uncomment if you want to show roomType */}
-            {/* <div className='flex justify-around items-center gap-1'>
-              <span><FaHome size={18} fill='purple'/></span>
-              <p className='text-xl text-amber-900 dark:text-amber-400'>{roomType}</p>
-            </div> */}
-            <div className="flex justify-around items-center gap-1">
-              <span>
-                <IoMdCheckmarkCircle size={16} fill="green" />
-              </span>
-              <p className="text-xl text-green-600 dark:text-green-400">{availability}</p>
+            <div className="flex items-center gap-2 mt-2">
+              <IoMdCheckmarkCircle size={16} className="text-pink-500" />
+              <p className=" text-pink-600 dark:text-pink-400">{availability}</p>
             </div>
           </div>
         </div>
@@ -58,7 +47,7 @@ const RoomCard = ({ room }) => {
                 navigate(`/detailsData/${room._id}`);
               }
             }}
-            className="btn bg-yellow-400 text-white hover:bg-yellow-500 dark:hover:bg-yellow-600 transition-colors"
+            className="btn bg-yellow-400 text-white hover:bg-pink-500 dark:hover:bg-pink-600 border-none shadow-md"
           >
             See More
           </button>

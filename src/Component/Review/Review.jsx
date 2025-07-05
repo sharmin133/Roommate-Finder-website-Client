@@ -7,7 +7,6 @@ const Review = () => {
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(true);
 
-  // Load reviews on component mount
   useEffect(() => {
     fetch('https://roommate-finder-website-server.vercel.app/reviews')
       .then(res => res.json())
@@ -21,7 +20,6 @@ const Review = () => {
       });
   }, []);
 
-  // Handle review form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!user) return alert("Please login to write a review.");
@@ -60,63 +58,72 @@ const Review = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md mt-10 mx-6 transition-colors duration-300">
-    
- <h2 className="text-3xl md:text-5xl text-center font-bold text-emerald-800 dark:text-emerald-400 p-4">
-           User Reviews
-          </h2>
-      {user ? (
-        <form onSubmit={handleSubmit} className="mb-6">
-          <textarea
-            className="w-full border border-gray-300 dark:border-gray-600 p-2 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300"
-            rows="3"
-            placeholder="Write your review..."
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            required
-          />
-          <button
-            type="submit"
-            className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded mt-2 transition-colors duration-300"
-          >
-            Submit Review
-          </button>
-        </form>
-      ) : (
-        <p className="text-center text-gray-500 dark:text-gray-400 mb-6">
-          Please log in to write a review.
-        </p>
-      )}
+    <div className="max-w-8xl mx-auto px-4">
+        <h2 className="text-3xl md:text-5xl text-center font-bold text-blue-800 dark:text-blue-400  my-8">Voices from Our Community</h2>
+      {/* <h2 className="text-4xl font-extrabold text-blue-900 dark:text-blue-300 text-center my-8">
+        Voices from Our Community
+      </h2> */}
 
-      {loading ? (
-        <p className="text-center text-gray-700 dark:text-gray-300">Loading reviews...</p>
-      ) : reviews.length === 0 ? (
-        <p className="text-center text-gray-600 dark:text-gray-400">No reviews yet. Be the first!</p>
-      ) : (
-        <div className="space-y-4">
-          {reviews.map((r) => (
-            <div
-              key={r._id}
-              className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-sm transition-colors duration-300"
+      <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md   transition-colors duration-300">
+
+        {user ? (
+          <form onSubmit={handleSubmit} className="mb-6">
+            <textarea
+              className="w-full rounded-md border border-pink-300 dark:border-pink-600 p-3 bg-white dark:bg-gray-800 text-blue-900 dark:text-yellow-200 placeholder-pink-400 dark:placeholder-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+              rows="4"
+              placeholder="Write your review..."
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              className="mt-3 px-6 py-2 bg-yellow-400 hover:bg-yellow-500 dark:bg-yellow-500 dark:hover:bg-yellow-600 text-white font-semibold rounded-md shadow-sm transition"
             >
-              <div className="flex items-center gap-2 mb-2">
-                <img
-                  src={r.userPhoto || 'https://via.placeholder.com/40'}
-                  alt={r.userName || 'User'}
-                  className="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-600"
-                />
-                <p className="font-semibold text-gray-900 dark:text-gray-100">{r.userName || 'Anonymous'}</p>
+              Submit Review
+            </button>
+          </form>
+        ) : (
+          <p className="text-center text-blue-700 dark:text-pink-400 mb-6">
+            Please log in to write a review.
+          </p>
+        )}
+
+        {loading ? (
+          <p className="text-center text-blue-100 dark:text-pink-400">Loading reviews...</p>
+        ) : reviews.length === 0 ? (
+          <p className="text-center text-blue-700 dark:text-pink-400">No reviews yet. Be the first!</p>
+        ) : (
+          <div className="space-y-6">
+            {reviews.map((r) => (
+              <div
+                key={r._id}
+                className="bg-pink-50 dark:bg-gray-800 rounded-lg p-5 border border-pink-200 dark:border-yellow-600 shadow-sm transition-colors"
+
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <img
+                    src={r.userPhoto || 'https://via.placeholder.com/40'}
+                    alt={r.userName || 'User'}
+                    className="w-10 h-10 rounded-full border-2 border-yellow-400 dark:border-pink-500"
+                  />
+                  <p className="font-semibold text-blue-900 dark:text-yellow-300 text-lg">
+                    {r.userName || 'Anonymous'}
+                  </p>
+                </div>
+                <p className="text-blue-800 dark:text-yellow-100 text-base leading-relaxed">{r.review}</p>
+                <p className="text-sm text-blue-600 dark:text-pink-400 mt-2">
+                  {r.createdAt ? new Date(r.createdAt).toLocaleString() : ''}
+                </p>
               </div>
-              <p className="text-gray-800 dark:text-gray-200">{r.review}</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                {r.createdAt ? new Date(r.createdAt).toLocaleString() : ''}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
+
+      </div>
     </div>
   );
 };
 
 export default Review;
+
